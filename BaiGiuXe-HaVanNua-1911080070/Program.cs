@@ -16,7 +16,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormSuCo());
         }
     }
 }

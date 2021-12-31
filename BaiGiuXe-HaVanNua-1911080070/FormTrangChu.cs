@@ -97,5 +97,12 @@ namespace BaiGiuXe_HaVanNua_1911080070
             x.Show();
             this.Hide();
         }
+
+        private void baoCaoSưCôToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form x = new FormSuCo();
+            x.Show();
+            this.Hide();
+        }
     }
 }

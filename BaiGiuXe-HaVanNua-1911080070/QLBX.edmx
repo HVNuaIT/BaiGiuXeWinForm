@@ -29,6 +29,18 @@
           <Property Name="IdChucVu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ChucVu" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="DSXeTrongBai">
+          <Key>
+            <PropertyRef Name="IDXeVao" />
+          </Key>
+          <Property Name="IDXeVao" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BienSo" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioVao" Type="datetime" />
+          <Property Name="LoaiXe" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
+          <Property Name="MaTheXe" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaBai" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="KhachHang">
           <Key>
             <PropertyRef Name="MaKhachHang" />
@@ -52,8 +64,6 @@
           <Property Name="ThoiGianGui" Type="int" />
           <Property Name="LoaiXe" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="SuCo">
           <Key>
             <PropertyRef Name="MaSuCo" />
@@ -61,9 +71,9 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <Property Name="MaSuCo" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="NoiDung" Type="nvarchar(max)" />
           <Property Name="NgayGhi" Type="datetime" />
-          <Property Name="LoaiSuCo" Type="nvarchar(max)" />
           <Property Name="MaXe" Type="nvarchar" MaxLength="50" />
           <Property Name="BienSo" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TheXe">
           <Key>
@@ -90,18 +100,6 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <Property Name="GioiTinh" Type="bit" />
           <Property Name="CMND" Type="int" />
         </EntityType>
-        <EntityType Name="XeRa">
-          <Key>
-            <PropertyRef Name="MaXeRa" />
-          </Key>
-          <Property Name="MaXeRa" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="BienSo" Type="nvarchar" MaxLength="50" />
-          <Property Name="MaTheXe" Type="nvarchar" MaxLength="50" />
-          <Property Name="LoaiXe" Type="nvarchar" MaxLength="50" />
-          <Property Name="GioRa" Type="datetime" />
-          <Property Name="ThoiGianGui" Type="int" />
-          <Property Name="ThanhTien" Type="float" />
-        </EntityType>
         <EntityType Name="XeVao">
           <Key>
             <PropertyRef Name="MaXe" />
@@ -118,22 +116,13 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <EntitySet Name="Bai" EntityType="Self.Bai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BangGia" EntityType="Self.BangGia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DSXeTrongBai" EntityType="Self.DSXeTrongBai" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuThanhToan" EntityType="Self.PhieuThanhToan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SuCo" EntityType="Self.SuCo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TheXe" EntityType="Self.TheXe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="XeRa" EntityType="Self.XeRa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XeVao" EntityType="Self.XeVao" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SuCo" EntityType="Self.SuCo" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [SuCo].[MaSuCo] AS [MaSuCo], 
-    [SuCo].[NoiDung] AS [NoiDung], 
-    [SuCo].[NgayGhi] AS [NgayGhi], 
-    [SuCo].[LoaiSuCo] AS [LoaiSuCo], 
-    [SuCo].[MaXe] AS [MaXe], 
-    [SuCo].[BienSo] AS [BienSo]
-    FROM [dbo].[SuCo] AS [SuCo]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -199,18 +188,6 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <Property Name="GioiTinh" Type="Boolean" />
           <Property Name="CMND" Type="Int32" />
         </EntityType>
-        <EntityType Name="XeRa">
-          <Key>
-            <PropertyRef Name="MaXeRa" />
-          </Key>
-          <Property Name="MaXeRa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="BienSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MaTheXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LoaiXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GioRa" Type="DateTime" Precision="3" />
-          <Property Name="ThoiGianGui" Type="Int32" />
-          <Property Name="ThanhTien" Type="Double" />
-        </EntityType>
         <EntityType Name="XeVao">
           <Key>
             <PropertyRef Name="MaXe" />
@@ -223,17 +200,6 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <Property Name="MaTheXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaBai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="SuCo">
-          <Key>
-            <PropertyRef Name="MaSuCo" />
-          </Key>
-          <Property Name="MaSuCo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NgayGhi" Type="DateTime" Precision="3" />
-          <Property Name="LoaiSuCo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MaXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BienSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityContainer Name="QuanLyBaiGiuXe" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bais" EntityType="Self.Bai" />
           <EntitySet Name="BangGias" EntityType="Self.BangGia" />
@@ -241,10 +207,10 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="TheXes" EntityType="Self.TheXe" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <EntitySet Name="XeRas" EntityType="Self.XeRa" />
           <EntitySet Name="XeVaos" EntityType="Self.XeVao" />
-          <EntitySet Name="SuCoes" EntityType="Self.SuCo" />
           <EntitySet Name="PhieuThanhToans" EntityType="QuanLyBaiGiuXeModel.PhieuThanhToan" />
+          <EntitySet Name="DSXeTrongBais" EntityType="QuanLyBaiGiuXeModel.DSXeTrongBai" />
+          <EntitySet Name="SuCoes" EntityType="QuanLyBaiGiuXeModel.SuCo" />
         </EntityContainer>
         <EntityType Name="PhieuThanhToan">
           <Key>
@@ -257,6 +223,29 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
           <Property Name="NgayRa" Type="DateTime" Precision="3" />
           <Property Name="ThoiGianGui" Type="Int32" />
           <Property Name="LoaiXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DSXeTrongBai">
+          <Key>
+            <PropertyRef Name="IDXeVao" />
+          </Key>
+          <Property Name="IDXeVao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BienSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioVao" Type="DateTime" Precision="3" />
+          <Property Name="LoaiXe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaTheXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaBai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SuCo">
+          <Key>
+            <PropertyRef Name="MaSuCo" />
+          </Key>
+          <Property Name="MaSuCo" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayGhi" Type="DateTime" Precision="3" />
+          <Property Name="MaXe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BienSo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -330,19 +319,6 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="XeRas">
-            <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.XeRa">
-              <MappingFragment StoreEntitySet="XeRa">
-                <ScalarProperty Name="MaXeRa" ColumnName="MaXeRa" />
-                <ScalarProperty Name="BienSo" ColumnName="BienSo" />
-                <ScalarProperty Name="MaTheXe" ColumnName="MaTheXe" />
-                <ScalarProperty Name="LoaiXe" ColumnName="LoaiXe" />
-                <ScalarProperty Name="GioRa" ColumnName="GioRa" />
-                <ScalarProperty Name="ThoiGianGui" ColumnName="ThoiGianGui" />
-                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="XeVaos">
             <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.XeVao">
               <MappingFragment StoreEntitySet="XeVao">
@@ -356,18 +332,6 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SuCoes">
-            <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.SuCo">
-              <MappingFragment StoreEntitySet="SuCo">
-                <ScalarProperty Name="MaSuCo" ColumnName="MaSuCo" />
-                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
-                <ScalarProperty Name="NgayGhi" ColumnName="NgayGhi" />
-                <ScalarProperty Name="LoaiSuCo" ColumnName="LoaiSuCo" />
-                <ScalarProperty Name="MaXe" ColumnName="MaXe" />
-                <ScalarProperty Name="BienSo" ColumnName="BienSo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PhieuThanhToans">
             <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.PhieuThanhToan">
               <MappingFragment StoreEntitySet="PhieuThanhToan">
@@ -378,6 +342,31 @@ warning 6002: The table/view 'QuanLyBaiGiuXe.dbo.SuCo' does not have a primary k
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="BienSo" ColumnName="BienSo" />
                 <ScalarProperty Name="MaThanhToan" ColumnName="MaThanhToan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DSXeTrongBais">
+            <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.DSXeTrongBai">
+              <MappingFragment StoreEntitySet="DSXeTrongBai">
+                <ScalarProperty Name="MaBai" ColumnName="MaBai" />
+                <ScalarProperty Name="MaTheXe" ColumnName="MaTheXe" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="LoaiXe" ColumnName="LoaiXe" />
+                <ScalarProperty Name="GioVao" ColumnName="GioVao" />
+                <ScalarProperty Name="BienSo" ColumnName="BienSo" />
+                <ScalarProperty Name="IDXeVao" ColumnName="IDXeVao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SuCoes">
+            <EntityTypeMapping TypeName="QuanLyBaiGiuXeModel.SuCo">
+              <MappingFragment StoreEntitySet="SuCo">
+                <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+                <ScalarProperty Name="BienSo" ColumnName="BienSo" />
+                <ScalarProperty Name="MaXe" ColumnName="MaXe" />
+                <ScalarProperty Name="NgayGhi" ColumnName="NgayGhi" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="MaSuCo" ColumnName="MaSuCo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

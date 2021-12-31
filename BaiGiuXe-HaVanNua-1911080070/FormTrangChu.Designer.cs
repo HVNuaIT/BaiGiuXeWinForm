@@ -47,8 +47,8 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.thôngKêSôLươngXeTrongBaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuâtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyXeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.baoCaoSưCôToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -185,6 +185,13 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.quanLyXeToolStripMenuItem.Text = "Quản Lý Xe Ra Vào";
             this.quanLyXeToolStripMenuItem.Click += new System.EventHandler(this.quanLyXeToolStripMenuItem_Click);
             // 
+            // baoCaoSưCôToolStripMenuItem
+            // 
+            this.baoCaoSưCôToolStripMenuItem.Name = "baoCaoSưCôToolStripMenuItem";
+            this.baoCaoSưCôToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.baoCaoSưCôToolStripMenuItem.Text = "Báo Cáo Sự Cố";
+            this.baoCaoSưCôToolStripMenuItem.Click += new System.EventHandler(this.baoCaoSưCôToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -196,12 +203,6 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.label1.Size = new System.Drawing.Size(460, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Trang Chủ Hệ Thống Quản Lý Bãi Gửi Xe ";
-            // 
-            // baoCaoSưCôToolStripMenuItem
-            // 
-            this.baoCaoSưCôToolStripMenuItem.Name = "baoCaoSưCôToolStripMenuItem";
-            this.baoCaoSưCôToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.baoCaoSưCôToolStripMenuItem.Text = "Báo Cáo Sự Cố";
             // 
             // FormTrangChu
             // 

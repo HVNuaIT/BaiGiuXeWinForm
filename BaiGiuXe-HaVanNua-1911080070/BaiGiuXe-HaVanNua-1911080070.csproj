@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,6 +83,9 @@
     <Compile Include="ChucVu.cs">
       <DependentUpon>QLBX.tt</DependentUpon>
     </Compile>
+    <Compile Include="DSXeTrongBai.cs">
+      <DependentUpon>QLBX.tt</DependentUpon>
+    </Compile>
     <Compile Include="FormBai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +121,12 @@
     </Compile>
     <Compile Include="FormQLTK.Designer.cs">
       <DependentUpon>FormQLTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuCo.Designer.cs">
+      <DependentUpon>FormSuCo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTheXe.cs">
       <SubType>Form</SubType>
@@ -172,9 +196,6 @@
     <Compile Include="User.cs">
       <DependentUpon>QLBX.tt</DependentUpon>
     </Compile>
-    <Compile Include="XeRa.cs">
-      <DependentUpon>QLBX.tt</DependentUpon>
-    </Compile>
     <Compile Include="XeVao.cs">
       <DependentUpon>QLBX.tt</DependentUpon>
     </Compile>
@@ -198,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQLTK.resx">
       <DependentUpon>FormQLTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuCo.resx">
+      <DependentUpon>FormSuCo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTheXe.resx">
       <DependentUpon>FormTheXe.cs</DependentUpon>
@@ -264,6 +288,18 @@
       <DependentUpon>QLBX.edmx</DependentUpon>
       <LastGenOutput>QLBX.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

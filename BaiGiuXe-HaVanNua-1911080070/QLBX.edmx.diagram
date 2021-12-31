@@ -11,10 +11,10 @@
         <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.KhachHang" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.TheXe" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.User" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.XeRa" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.XeVao" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.SuCo" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.PhieuThanhToan" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.DSXeTrongBai" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="QuanLyBaiGiuXeModel.SuCo" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -55,6 +55,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.txtGhiCHu = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -299,6 +300,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLuu);
             this.groupBox2.Controls.Add(this.BntVaoBen);
             this.groupBox2.Controls.Add(this.BntRaBen);
             this.groupBox2.Controls.Add(this.btnQuayLai);
@@ -307,6 +309,16 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.groupBox2.Size = new System.Drawing.Size(200, 100);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(6, 68);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 8;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // FormXeRaVao
             // 
@@ -359,5 +371,6 @@ namespace BaiGiuXe_HaVanNua_1911080070
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtGhiCHu;
         private System.Windows.Forms.ComboBox cbMaThe;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

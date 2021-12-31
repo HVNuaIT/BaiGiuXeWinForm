@@ -51,18 +51,32 @@ namespace BaiGiuXe_HaVanNua_1911080070
             s.MaBai = Convert.ToString(cbBai.SelectedValue);
             db.XeVaos.Add(s);
             String ma = Convert.ToString(cbBai.SelectedValue);
-            var ds = db.Bais.Where(a => a.MaBai.Contains(ma)).First();
-            ds.MaXe = txtMaXe.Text;
-            //db.SaveChanges();
+            var objBai = db.Bais.Where(a => a.MaBai.Contains(ma)).First();
+            objBai.MaXe = txtMaXe.Text;
+            var ds = db.Bais.Where(a => a.MaBai.Contains(ma)).ToList();
+            if (ds.Count > 0)
+            {
+                MessageBox.Show("Vị trí này đã có xe rồi"); return;
+            }
             String maThe = Convert.ToString(cbMaThe.SelectedValue);
-            var dsthe = db.TheXes.Where(b => b.MaTheXe.Contains(maThe)).First();
-            dsthe.GioVao = dtNgayVao.Value;
-            dsthe.MaXe = txtMaXe.Text;
+            var objthe = db.TheXes.Where(b => b.MaTheXe.Contains(maThe)).First();
+            var dsthe = db.TheXes.Where(b => b.MaTheXe.Contains(maThe)).ToList();
+            objthe.GioVao = dtNgayVao.Value;
+            objthe.MaXe = txtMaXe.Text;
+            if (objthe.MaTheXe == cbMaThe.SelectedValue)
+            {
+                MessageBox.Show("Thẻ đã lưu Rồi"); return;
+            }
             String loai = Convert.ToString(cbLoaiXe.SelectedValue);
-            var dsLoai = db.BangGias.Where(b => b.LoaiXe.Contains(loai)).First();
-            dsLoai.SoCho -= 1;
+            var objbangGia = db.BangGias.Where(b => b.LoaiXe.Contains(loai)).First();
+       
+            objbangGia.SoCho -= 1;
+            if (objbangGia.SoCho < 0)
+            {
+                MessageBox.Show("Hết Chổ Trống Rồi"); return;
+            }
+           
 
-            //db.SaveChanges();
             db.SaveChanges();
             loadData();
 
@@ -81,10 +95,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.Hide();
         }
 
-        private void Lưu_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -164,6 +175,21 @@ namespace BaiGiuXe_HaVanNua_1911080070
                 db.SaveChanges();
                 loadData();
             }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
+            DSXeTrongBai s = new DSXeTrongBai();
+            s.IDXeVao = txtMaXe.Text;
+            s.MaTheXe = Convert.ToString(cbMaThe.SelectedValue);
+            s.GioVao = dtNgayVao.Value;
+            s.GhiChu = txtGhiCHu.Text;
+            s.LoaiXe = Convert.ToString(cbLoaiXe.SelectedValue);
+            s.BienSo = txtBienSo.Text;
+            s.MaBai = Convert.ToString(cbBai.SelectedValue);
+            db.DSXeTrongBais.Add(s);
+            db.SaveChanges();
         }
     }
 }

@@ -17,8 +17,8 @@ namespace BaiGiuXe_HaVanNua_1911080070
         public string MaSuCo { get; set; }
         public string NoiDung { get; set; }
         public Nullable<System.DateTime> NgayGhi { get; set; }
-        public string LoaiSuCo { get; set; }
         public string MaXe { get; set; }
         public string BienSo { get; set; }
+        public string TenKhachHang { get; set; }
     }
 }

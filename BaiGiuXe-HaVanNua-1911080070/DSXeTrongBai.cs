@@ -12,14 +12,14 @@ namespace BaiGiuXe_HaVanNua_1911080070
     using System;
     using System.Collections.Generic;
     
-    public partial class XeRa
+    public partial class DSXeTrongBai
     {
-        public string MaXeRa { get; set; }
+        public string IDXeVao { get; set; }
         public string BienSo { get; set; }
-        public string MaTheXe { get; set; }
+        public Nullable<System.DateTime> GioVao { get; set; }
         public string LoaiXe { get; set; }
-        public Nullable<System.DateTime> GioRa { get; set; }
-        public Nullable<int> ThoiGianGui { get; set; }
-        public Nullable<double> ThanhTien { get; set; }
+        public string GhiChu { get; set; }
+        public string MaTheXe { get; set; }
+        public string MaBai { get; set; }
     }
 }

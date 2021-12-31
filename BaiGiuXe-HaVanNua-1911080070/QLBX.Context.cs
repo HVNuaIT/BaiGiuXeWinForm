@@ -31,9 +31,9 @@ namespace BaiGiuXe_HaVanNua_1911080070
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<TheXe> TheXes { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<XeRa> XeRas { get; set; }
         public virtual DbSet<XeVao> XeVaos { get; set; }
-        public virtual DbSet<SuCo> SuCoes { get; set; }
         public virtual DbSet<PhieuThanhToan> PhieuThanhToans { get; set; }
+        public virtual DbSet<DSXeTrongBai> DSXeTrongBais { get; set; }
+        public virtual DbSet<SuCo> SuCoes { get; set; }
     }
 }

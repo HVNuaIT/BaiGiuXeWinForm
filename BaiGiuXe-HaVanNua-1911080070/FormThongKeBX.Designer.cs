@@ -32,7 +32,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbDT = new System.Windows.Forms.ComboBox();
+            this.cbLoaiXe = new System.Windows.Forms.ComboBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -56,7 +56,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cbDT);
+            this.groupBox1.Controls.Add(this.cbLoaiXe);
             this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
@@ -68,19 +68,19 @@ namespace BaiGiuXe_HaVanNua_1911080070
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 34);
+            this.label2.Location = new System.Drawing.Point(17, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 42;
-            this.label2.Text = "Điện Thoại";
+            this.label2.Text = "Loại Xe";
             // 
-            // cbDT
+            // cbLoaiXe
             // 
-            this.cbDT.FormattingEnabled = true;
-            this.cbDT.Location = new System.Drawing.Point(97, 34);
-            this.cbDT.Name = "cbDT";
-            this.cbDT.Size = new System.Drawing.Size(121, 21);
-            this.cbDT.TabIndex = 46;
+            this.cbLoaiXe.FormattingEnabled = true;
+            this.cbLoaiXe.Location = new System.Drawing.Point(97, 34);
+            this.cbLoaiXe.Name = "cbLoaiXe";
+            this.cbLoaiXe.Size = new System.Drawing.Size(121, 21);
+            this.cbLoaiXe.TabIndex = 46;
             // 
             // btnTim
             // 
@@ -90,6 +90,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.btnTim.TabIndex = 43;
             this.btnTim.Text = "Thống Kê";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnLamMoi
             // 
@@ -99,6 +100,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.btnLamMoi.TabIndex = 54;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dataGridView1
             // 
@@ -116,6 +118,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.bntThoát.TabIndex = 52;
             this.bntThoát.Text = "Thoát";
             this.bntThoát.UseVisualStyleBackColor = true;
+            this.bntThoát.Click += new System.EventHandler(this.bntThoát_Click);
             // 
             // bntQuayLại
             // 
@@ -125,6 +128,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.bntQuayLại.TabIndex = 51;
             this.bntQuayLại.Text = "Quay Lại";
             this.bntQuayLại.UseVisualStyleBackColor = true;
+            this.bntQuayLại.Click += new System.EventHandler(this.bntQuayLại_Click);
             // 
             // bntExcel
             // 
@@ -134,6 +138,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.bntExcel.TabIndex = 49;
             this.bntExcel.Text = "&Excel";
             this.bntExcel.UseVisualStyleBackColor = true;
+            this.bntExcel.Click += new System.EventHandler(this.bntExcel_Click);
             // 
             // FormThongKeBX
             // 
@@ -149,6 +154,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
             this.Controls.Add(this.bntExcel);
             this.Name = "FormThongKeBX";
             this.Text = "FormThongKeBX";
+            this.Load += new System.EventHandler(this.FormThongKeBX_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -162,7 +168,7 @@ namespace BaiGiuXe_HaVanNua_1911080070
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbDT;
+        private System.Windows.Forms.ComboBox cbLoaiXe;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridView dataGridView1;
